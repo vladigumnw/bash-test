@@ -1,0 +1,14 @@
+[Unit]
+Description=Monitor test process
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/myscript.sh
+Restart=always
+User=root
+StandardOutput=append:/var/log/monitoring.log
+StandardError=append:/var/log/monitoring.log
+
+[Install]
+WantedBy=multi-user.target
